@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B22D0891276B6A4B001F0BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D0890276B6A4B001F0BF9 /* AppDelegate.swift */; };
 		B22D0893276B6A4B001F0BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D0892276B6A4B001F0BF9 /* SceneDelegate.swift */; };
-		B22D0895276B6A4B001F0BF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D0894276B6A4B001F0BF9 /* ViewController.swift */; };
 		B22D0898276B6A4B001F0BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22D0896276B6A4B001F0BF9 /* Main.storyboard */; };
 		B22D089A276B6A50001F0BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22D0899276B6A50001F0BF9 /* Assets.xcassets */; };
 		B22D089D276B6A50001F0BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22D089B276B6A50001F0BF9 /* LaunchScreen.storyboard */; };
@@ -18,6 +17,7 @@
 		B22D08C1276B6D03001F0BF9 /* TrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D08C0276B6D03001F0BF9 /* TrackerTableViewCell.swift */; };
 		B22D08C3276B722D001F0BF9 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D08C2276B722D001F0BF9 /* Tracker.swift */; };
 		B22D08C5276B72B2001F0BF9 /* TrackerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D08C4276B72B2001F0BF9 /* TrackerTableViewController.swift */; };
+		B22D08C727705DFC001F0BF9 /* addPackageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D08C627705DFC001F0BF9 /* addPackageTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 		B22D088D276B6A4B001F0BF9 /* PackageTrackingApp 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PackageTrackingApp 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22D0890276B6A4B001F0BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B22D0892276B6A4B001F0BF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B22D0894276B6A4B001F0BF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B22D0897276B6A4B001F0BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B22D0899276B6A50001F0BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B22D089C276B6A50001F0BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		B22D08C0276B6D03001F0BF9 /* TrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerTableViewCell.swift; sourceTree = "<group>"; };
 		B22D08C2276B722D001F0BF9 /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		B22D08C4276B72B2001F0BF9 /* TrackerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerTableViewController.swift; sourceTree = "<group>"; };
+		B22D08C627705DFC001F0BF9 /* addPackageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPackageTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +85,7 @@
 		B22D0884276B6A4B001F0BF9 = {
 			isa = PBXGroup;
 			children = (
+				B2D05E7427A2A0F100C4C147 /* Model */,
 				B22D088F276B6A4B001F0BF9 /* PackageTrackingApp 1.0 */,
 				B22D08A6276B6A50001F0BF9 /* PackageTrackingApp 1.0Tests */,
 				B22D08B1276B6A50001F0BF9 /* PackageTrackingApp 1.0UITests */,
@@ -107,10 +108,9 @@
 			children = (
 				B22D0890276B6A4B001F0BF9 /* AppDelegate.swift */,
 				B22D0892276B6A4B001F0BF9 /* SceneDelegate.swift */,
-				B22D0894276B6A4B001F0BF9 /* ViewController.swift */,
 				B22D08C0276B6D03001F0BF9 /* TrackerTableViewCell.swift */,
 				B22D08C4276B72B2001F0BF9 /* TrackerTableViewController.swift */,
-				B22D08C2276B722D001F0BF9 /* Tracker.swift */,
+				B22D08C627705DFC001F0BF9 /* addPackageTableViewController.swift */,
 				B22D0896276B6A4B001F0BF9 /* Main.storyboard */,
 				B22D0899276B6A50001F0BF9 /* Assets.xcassets */,
 				B22D089B276B6A50001F0BF9 /* LaunchScreen.storyboard */,
@@ -135,6 +135,14 @@
 				B22D08B4276B6A50001F0BF9 /* Info.plist */,
 			);
 			path = "PackageTrackingApp 1.0UITests";
+			sourceTree = "<group>";
+		};
+		B2D05E7427A2A0F100C4C147 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B22D08C2276B722D001F0BF9 /* Tracker.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,9 +277,9 @@
 			files = (
 				B22D08C5276B72B2001F0BF9 /* TrackerTableViewController.swift in Sources */,
 				B22D08C1276B6D03001F0BF9 /* TrackerTableViewCell.swift in Sources */,
-				B22D0895276B6A4B001F0BF9 /* ViewController.swift in Sources */,
 				B22D08C3276B722D001F0BF9 /* Tracker.swift in Sources */,
 				B22D0891276B6A4B001F0BF9 /* AppDelegate.swift in Sources */,
+				B22D08C727705DFC001F0BF9 /* addPackageTableViewController.swift in Sources */,
 				B22D0893276B6A4B001F0BF9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

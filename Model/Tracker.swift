@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PackageStatus {
+struct PackageStatus: Codable {
     var name: String
     var address: String
     var status: String

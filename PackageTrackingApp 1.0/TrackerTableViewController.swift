@@ -8,8 +8,7 @@
 import UIKit
 
 var packageStatusSheet: [PackageStatus] = [
-    PackageStatus (name: "Jayden Patterson", address: "2-35-4 Higashi Nakano, Nakano", status: "Delivered"),
-    PackageStatus (name: "Shota Kaneko", address: "2-35-4 Higashi Nakano, Nakano", status: "Distributed")
+    PackageStatus (name: "Jayden Patterson", address: "2 Higashi Nakano, Nakano", status: "Delivered")
 ]
 
 class TrackerTableViewController: UITableViewController {
@@ -18,10 +17,9 @@ class TrackerTableViewController: UITableViewController {
         return nil
     }
     static func loadSamplePackages() -> [PackageStatus] {
-        let package1 = PackageStatus (name: "Jayden Patterson", address: "2-35-4 Higashi Nakano, Nakano", status: "Delivered")
-        let package2 = PackageStatus (name: "Shota Kaneko", address: "2-35-4 Higashi Nakano, Nakano", status: "Distributed")
+        let package1 = PackageStatus (name: "Jayden Patterson", address: "2 Higashi Nakano, Nakano", status: "Delivered")
     
-        return [package1, package2]
+        return [package1]
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,16 +54,43 @@ class TrackerTableViewController: UITableViewController {
         
         return cell
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let packageStatus = packageStatusSheet[indexPath.row]
-        print("\(packageStatus.name) \(indexPath)")
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let packageStatus = packageStatusSheet[indexPath.row]
+//        print("\(packageStatus.name) \(indexPath)")
+//    }
     override func tableView(_ tableView: UITableView, moveRowAt
     fromIndexPath: IndexPath, to: IndexPath) {
         let movedPackage = packageStatusSheet.remove(at: fromIndexPath.row)
         packageStatusSheet.insert(movedPackage, at: to.row)
     }
-   
+    @IBSegueAction func addEditEmoji(_ coder: NSCoder, sender: Any?) -> addPackageTableViewController? {
+        if let cell = sender as? UITableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            
+            let packageToEdit = packageStatusSheet[indexPath.row]
+            return addPackageTableViewController(coder: coder,
+                                                 statusSave: packageToEdit)
+        } else {
+            return addPackageTableViewController(coder: coder,
+                                                 statusSave: nil)
+        }
+        
+    }
+    @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind",
+            let sourceViewController = segue.source
+               as? addPackageTableViewController,
+            let package = sourceViewController.statusSave else { return }
+    
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            packageStatusSheet[selectedIndexPath.row] = package
+            tableView.reloadRows(at: [selectedIndexPath], with: .none)
+        } else {
+            let newIndexPath = IndexPath(row: packageStatusSheet.count, section: 0)
+            packageStatusSheet.append(package)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
